@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'template-driven-forms';
+
+  onSubmit(contactForm: any) {
+    console.log(contactForm.value);
+  }
 }
