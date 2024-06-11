@@ -2,17 +2,17 @@
 
   <p>
     <label for="firstname">First Name</label>
-    <input type="text" name="firstname" ngModel #fname="ngModel">
+    <input type="text" name="firstname" ngModel #fname="ngModel" required minlength="1">
   </p>
 
   <p>
     <label for="lastname">Last Name</label>
-    <input type="text" name="lastname" ngModel>
+    <input type="text" name="lastname" ngModel required maxlength="15" pattern="^[a-zA-Z]+$">
   </p>
 
   <p>
     <label for="email">Email </label>
-    <input type="text" id="email" name="email" ngModel>
+    <input type="text" id="email" name="email" ngModel required email>
   </p>
 
   <p>
@@ -23,11 +23,11 @@
 
   <p>
     <label for="isMarried">Married</label>
-    <input type="checkbox" name="isMarried" ngModel>
+    <input type="checkbox" name="isMarried" ngModel required>
   </p>
 
   <p>
-    <button type="submit">Submit</button>
+    <button type="submit" [disabled]="!contactForm.valid">Submit</button>
   </p>
 
 </form>
